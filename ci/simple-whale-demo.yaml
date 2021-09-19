@@ -9,7 +9,7 @@ spec:
     args:
     - "--dockerfile=Dockerfile"
     - "--context=git://github.com/$GITHUB_ID/SimpleWhaleDemo.git"
-    - "--destination=$DOCKER_ID/simplewhale"
+    - "--destination=$GITHUB_ID/simplewhale"
     volumeMounts:
     - name: kaniko-secret
       mountPath: /kaniko/.docker
