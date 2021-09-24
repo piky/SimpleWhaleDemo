@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simplewhale-deployment
+  labels:
+    app: simplewhale
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simplewhale
+  template:
+    metadata:
+      labels:
+        app: simplewhale
+    spec:
+      containers:
+      - name: simplewhale
+        image: ghcr.io/piky/simplewhale
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+        - name: regcred
